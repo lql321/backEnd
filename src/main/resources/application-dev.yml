@@ -1,0 +1,43 @@
+server:
+  port: 3333
+  servlet:
+      context-path: /push
+logging:
+  path: ./logs
+  file: ./logs/lql-logback.log
+  level:
+      root: info
+#      com.xyz.lql.dao: debug
+
+spring:
+  application:
+    name: lql
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://127.0.0.1:3306/basic-framework?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+      username: root
+      password: root
+      initialSize: 1
+      minIdle: 1
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 50
+      filters: stat
+      connectionProperties: druid.stat.mergeSql=false;druid.stat.slowSqlMillis=3000
+mybatis:
+  typeAliasesPackage: com.xyz.lql.entity
+  mapperLocations: classpath:com/xyz/lql/dao/**/*.xml
+swagger:
+  show: true
+
+
+
+
+

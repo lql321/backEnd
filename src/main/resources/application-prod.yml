@@ -1,0 +1,37 @@
+server:
+  port: 3333
+  servlet:
+        context-path: /push
+spring:
+  application:
+    name: lql
+  datasource:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://118.25.194.90:3306/deecard_dev?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+      username: liql
+      password: deecard_dev
+
+      initialSize: 1
+      minIdle: 1
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxPoolPreparedStatementPerConnectionSize: 50
+      filters: stat
+      connectionProperties: druid.stat.mergeSql=false;druid.stat.slowSqlMillis=3000
+mybatis:
+  typeAliasesPackage: com.xyz.lql.entity
+  mapperLocations: classpath:com/xyz/lql/dao/**/*.xml
+swagger:
+  show: false
+
+
+
+
+

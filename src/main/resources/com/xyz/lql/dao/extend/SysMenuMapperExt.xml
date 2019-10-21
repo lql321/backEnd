@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xyz.lql.dao.SysMenuMapper">
+
+	<select id="getMenuList" resultType="com.xyz.lql.entity.SysMenu">
+		select
+		<include refid="Base_Column_List" />
+		from t_sys_menu
+	</select>
+	<select id="getSameMenuUrl" resultType="java.lang.Integer">
+		select count(1) from t_sys_menu where url=#{url}
+	</select>
+
+</mapper>
