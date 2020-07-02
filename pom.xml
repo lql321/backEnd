@@ -16,7 +16,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<mysql-connector-java.version>5.1.35</mysql-connector-java.version>
+		<mysql-connector-java.version>8.0.16</mysql-connector-java.version>
 		<pagehelper.version>4.1.0</pagehelper.version>
 		<swagger2.version>2.6.1</swagger2.version>
 	</properties>
